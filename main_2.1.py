@@ -19,17 +19,7 @@ icon_file = "icon.ico"
 logo_file = "logo.png"
 encryption_key_file = "key.key"
 
-# def log_setup(log_file, max_bytes=1, backup_count=10, level=logging.INFO):
-#     logging.basicConfig(level=level, filename=log_file, filemode='a', 
-#                         format='%(asctime)s - %(levelname)s: %(message)s')
-#     logger = logging.getLogger()
-#     log_handler = logging.handlers.RotatingFileHandler(log_file, maxBytes=max_bytes, backupCount=backup_count)
-#     log_handler.setLevel(level)
-#     formatter = logging.Formatter('%(asctime)s - %(levelname)s: %(message)s')
-#     log_handler.setFormatter(formatter)
-#     logger.addHandler(log_handler)
-#     logger.setLevel(level)
-#     return logger
+
 handler = logging.handlers.RotatingFileHandler(filename=log_file, maxBytes=1, backupCount=3)
 my_formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 file_logger = logging.FileHandler(log_file,)
