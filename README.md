@@ -2,7 +2,7 @@
 
 An application to store you're favorite websites/applications username and passwords
 
-Prerequisities: Install the following pip packages: cryptography pyperclip, hashlib, logging.
+Prerequisities: Python 3.10, and install the following pip packages: cryptography pyperclip.
 
 This application meant to run in a Windows OS.
 
