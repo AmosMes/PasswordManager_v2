@@ -11,6 +11,7 @@ import hashlib
 import base64
 import logging
 
+
 # File paths and Global variables
 base_dir = "users"
 log_file = "password_manager.log"
@@ -20,9 +21,9 @@ logo_file = "logo.png"
 encryption_key_file = "key.key"
 
 
-handler = logging.handlers.RotatingFileHandler(filename=log_file, maxBytes=1, backupCount=3)
-my_formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-file_logger = logging.FileHandler(log_file,)
+# ---------------------------- CREATING LOGS ------------------------------- #
+handler = logging.handlers.RotatingFileHandler(log_file, maxBytes=1048576, backupCount=3)
+my_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s', datefmt="%Y-%m-%d %H:%M:%S")
 handler.setLevel(logging.INFO)
 handler.setFormatter(my_formatter)
 
@@ -342,7 +343,7 @@ def show_registered_users():
                         json.dump(data, file)
                     tree.delete(selected_item)
                     messagebox.showinfo("Success", f"User '{username}' has been deleted.")
-                    logging.info(f"User '{username}' has been deleted.")
+                    logger.info(f"User '{username}' has been deleted.")
                     user_dir = os.path.join(base_dir, username)
                     shutil.rmtree(user_dir)
             else:
